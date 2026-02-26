@@ -1,0 +1,17 @@
+---
+// SectionShell — reusable section wrapper
+
+interface Props {
+  num: string;
+  title: string;
+}
+const { num, title } = Astro.props;
+---
+
+<section id={`section-${num}`}>
+  <div class="section-header">
+    <span class="section-number">{num}</span>
+    <h2>{title}</h2>
+  </div>
+  <slot />
+</section>

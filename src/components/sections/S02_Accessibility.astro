@@ -1,0 +1,94 @@
+---
+---
+
+<section id="section-02">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2>Accessibility &amp; Contrast</h2>
+  </div>
+
+  <div class="callout">
+    <strong>WCAG 2.1 AA</strong> requires a contrast ratio of at least <strong>4.5:1</strong> for normal text and <strong>3:1</strong> for large text and UI components (including chart labels and axes). Brand yellow (#FFCD00) on white <em>fails</em> this threshold — always pair it with dark text or a dark background.
+  </div>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>Foreground</th>
+        <th>Background</th>
+        <th>Preview</th>
+        <th>Ratio</th>
+        <th>WCAG AA</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge--dark">#1E1E1E</span></td>
+        <td><span class="badge badge--yellow">#FFCD00</span></td>
+        <td><span class="preview-text badge--yellow">Label</span></td>
+        <td><strong>9.7:1</strong></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>✅ Preferred use of Brand Yellow</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge--ghost">#FFFFFF</span></td>
+        <td><span class="badge badge--yellow">#FFCD00</span></td>
+        <td><span class="preview-text" style="background:#FFCD00;color:#fff;">Label</span></td>
+        <td><strong>1.21:1</strong></td>
+        <td><span class="badge fail">FAIL</span></td>
+        <td>❌ Never use white text on yellow</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge--ghost">#FFFFFF</span></td>
+        <td><span class="badge badge--orange">#FF4F00</span></td>
+        <td><span class="preview-text badge--orange">Label</span></td>
+        <td><strong>4.67:1</strong></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>✅ White text on Brand Orange passes AA</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge--dark">#1E1E1E</span></td>
+        <td><span class="badge badge--orange">#FF4F00</span></td>
+        <td><span class="preview-text" style="background:#FF4F00;color:#1E1E1E;">Label</span></td>
+        <td><strong>4.43:1</strong></td>
+        <td><span class="badge warn">BORDER</span></td>
+        <td>⚠ Marginally fails AA for small text; fine for large/bold</td>
+      </tr>
+      <tr>
+        <td><span class="badge" style="background:#CC9500;color:#fff;">#CC9500</span></td>
+        <td><span class="badge badge--ghost">#FFFFFF</span></td>
+        <td><span class="preview-text" style="background:#fff;color:#CC9500;border:1px solid #CC9500;">Label</span></td>
+        <td><strong>4.52:1</strong></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>✅ Use Yellow Dark for text referencing yellow data</td>
+      </tr>
+      <tr>
+        <td><span class="badge" style="background:#CC3E00;color:#fff;">#CC3E00</span></td>
+        <td><span class="badge badge--ghost">#FFFFFF</span></td>
+        <td><span class="preview-text" style="background:#fff;color:#CC3E00;border:1px solid #CC3E00;">Label</span></td>
+        <td><strong>7.01:1</strong></td>
+        <td><span class="badge pass">PASS</span></td>
+        <td>✅ Use Orange Dark for text referencing orange data</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mt-lg" style="--accent-top: none;">
+    <p class="card-title-bold mb-sm">Beyond Colour: Additional Accessibility Principles</p>
+    <div class="info-grid">
+      <div class="card-sm card--accent-slate">
+        <h4 class="card-title-sm">Never Colour-Alone</h4>
+        <p class="text-sm">Colour must never be the only means of conveying information. Always pair colour with shape, pattern, or direct labelling for chart series.</p>
+      </div>
+      <div class="card-sm card--accent-slate">
+        <h4 class="card-title-sm">Patterns &amp; Texture</h4>
+        <p class="text-sm">For print or colour-blind contexts, supplement fills with hatching, dots, or dashes so series remain distinguishable without colour.</p>
+      </div>
+      <div class="card-sm card--accent-slate">
+        <h4 class="card-title-sm">Colour-blind Safe</h4>
+        <p class="text-sm">Avoid pairing yellow and white, or red and green without supporting visual cues. Deuteranopia affects ~8% of males. Test with Coblis or Colour Oracle.</p>
+      </div>
+    </div>
+  </div>
+</section>

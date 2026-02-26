@@ -1,0 +1,77 @@
+---
+---
+
+<section id="section-12">
+  <div class="section-header">
+    <span class="section-number">12</span>
+    <h2>Interaction &amp; Annotation States</h2>
+  </div>
+  <p class="section-intro">Interactive charts must communicate their state clearly. Selection, hover, default annotation, and explicit highlight are distinct states with consistent visual treatments. Key information must never be hidden behind interaction alone.</p>
+
+  <div class="grid-2 mb-md">
+    <div class="card">
+      <h4 class="card-title-bold">Default State</h4>
+      <p class="text-sm mb-sm">No selection active. A rule-based annotation set is shown — typically the peak value, most recent point, or a key threshold. All series at full opacity.</p>
+      <svg width="100%" viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="85" x2="260" y2="85" stroke="#E0E0E0" stroke-width="1"/>
+        <rect x="30" y="45" width="30" height="40" fill="#FFCD00" rx="2"/>
+        <rect x="80" y="30" width="30" height="55" fill="#FFCD00" rx="2"/>
+        <rect x="130" y="20" width="30" height="65" fill="#FFCD00" rx="2"/>
+        <text x="145" y="15" font-size="8" fill="#1E1E1E" text-anchor="middle" font-family="DM Mono,monospace" font-weight="600">68 ▲</text>
+        <rect x="180" y="35" width="30" height="50" fill="#FFCD00" rx="2"/>
+        <rect x="230" y="55" width="30" height="30" fill="#FFCD00" rx="2"/>
+        <text x="45" y="93" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">A</text>
+        <text x="95" y="93" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">B</text>
+        <text x="145" y="93" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">C</text>
+        <text x="195" y="93" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">D</text>
+        <text x="245" y="93" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">E</text>
+      </svg>
+      <p class="mono-xxs mt-xxs">Peak bar annotated by default rule only.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="card-title-bold">Selection State</h4>
+      <p class="text-sm mb-sm">Selected elements get data labels and full opacity. Non-selected items render in uniform low-contrast neutral to focus attention on the selection.</p>
+      <svg width="100%" viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="85" x2="260" y2="85" stroke="#E0E0E0" stroke-width="1"/>
+        <rect x="30" y="45" width="30" height="40" fill="#D8D8D8" rx="2"/>
+        <rect x="80" y="30" width="30" height="55" fill="#FFCD00" rx="2"/>
+        <text x="95" y="25" font-size="8" fill="#1E1E1E" text-anchor="middle" font-family="DM Mono,monospace" font-weight="600">55</text>
+        <rect x="130" y="20" width="30" height="65" fill="#D8D8D8" rx="2"/>
+        <rect x="180" y="35" width="30" height="50" fill="#F7BB49" rx="2"/>
+        <text x="195" y="30" font-size="8" fill="#CC9500" text-anchor="middle" font-family="DM Mono,monospace" font-weight="600">50</text>
+        <rect x="230" y="55" width="30" height="30" fill="#D8D8D8" rx="2"/>
+        <text x="45" y="93" font-size="7" fill="#AAAAAA" text-anchor="middle" font-family="DM Mono,monospace">A</text>
+        <text x="95" y="93" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">B</text>
+        <text x="145" y="93" font-size="7" fill="#AAAAAA" text-anchor="middle" font-family="DM Mono,monospace">C</text>
+        <text x="195" y="93" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">D</text>
+        <text x="245" y="93" font-size="7" fill="#AAAAAA" text-anchor="middle" font-family="DM Mono,monospace">E</text>
+      </svg>
+      <p class="mono-xxs mt-xxs">B + D selected. Others at uniform low-contrast grey.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="card-title-bold">Hover &amp; Focus States</h4>
+      <p class="text-sm mb-sm">Hover adds a dark stroke and shadow. Keyboard focus adds a visible focus ring (3px blue, 2px offset). Hover must never be the only route to a data value.</p>
+      <div class="row-lg row-end">
+        <div class="text-center"><div class="mono-xxs text-muted mb-xxs">Default</div><div style="width:32px;height:50px;background:#FFCD00;border-radius:2px;"></div></div>
+        <div class="text-center"><div class="mono-xxs text-muted mb-xxs">Hovered</div><div style="width:32px;height:50px;background:#FFCD00;border-radius:2px;border:2px solid #1E1E1E;box-shadow:0 2px 8px rgba(0,0,0,0.18);"></div></div>
+        <div class="text-center"><div class="mono-xxs text-muted mb-xxs">Focused</div><div style="width:32px;height:50px;background:#FFCD00;border-radius:2px;outline:3px solid #1565C0;outline-offset:2px;"></div></div>
+        <div class="text-center"><div class="mono-xxs text-muted mb-xxs">Inactive</div><div style="width:32px;height:50px;background:#D8D8D8;border-radius:2px;"></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 class="card-title-bold">Screen Reader &amp; Keyboard</h4>
+      <p class="text-sm mb-xs">All interactive chart elements must be reachable by keyboard. Screen reader alternatives must match the visual representation in grouping and level of detail — including trends and visually apparent features.</p>
+      <div class="col-xs text-xs">
+        <div class="row-top-xs"><span class="text-yellow-bold">✅</span><span>All data points reachable via Tab/Arrow keys</span></div>
+        <div class="row-top-xs"><span class="text-yellow-bold">✅</span><span>Chart has descriptive aria-label summarising the key insight</span></div>
+        <div class="row-top-xs"><span class="text-yellow-bold">✅</span><span>Data table alternative available for complex charts</span></div>
+        <div class="row-top-xs"><span class="text-fail text-bold">❌</span><span>Mouse-only tooltips with no keyboard equivalent</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout"><strong>Information must not be hidden behind interaction.</strong> Charts use direct labelling wherever possible so the most important values are visible without hover or click. Tooltips and selection states enrich the experience — they must not replace it.</div>
+</section>

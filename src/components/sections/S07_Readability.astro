@@ -1,0 +1,128 @@
+---
+---
+
+<section id="section-07">
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h2>Readability Principles</h2>
+  </div>
+
+  <p class="section-intro mb-xl">Effective data visualisation is not about making charts look impressive — it is about reducing the cognitive effort required to extract meaning. A chart that has to be studied before it can be understood is no longer a tool. It is a puzzle. These principles exist to prevent that.</p>
+
+  <!-- Principle cards -->
+  <div class="grid-3 mb-xl">
+
+    <div class="card ">
+      <div class="kicker kicker--yellow">PRINCIPLE 01</div>
+      <h3 class="card-title">Design for perception, not expertise</h3>
+      <p class="text-body-sm">Never assume that a technical audience will tolerate a poorly readable chart. Experienced users learn to endure bad design — they do not read it better. Design for how the human brain processes visuals, not for the assumed skill level of the reader.</p>
+    </div>
+
+    <div class="card ">
+      <div class="kicker kicker--yellow">PRINCIPLE 02</div>
+      <h3 class="card-title">Respect the perceptual hierarchy</h3>
+      <p class="text-body-sm">Research by Cleveland &amp; McGill establishes a clear hierarchy of how accurately humans decode visual encodings. Length and position are read most accurately. Angles, areas, and volumes are read least accurately. Chart choice should follow this hierarchy, not fight it.</p>
+    </div>
+
+    <div class="card ">
+      <div class="kicker kicker--yellow">PRINCIPLE 03</div>
+      <h3 class="card-title">Text is not decoration — it is structure</h3>
+      <p class="text-body-sm">Labels, annotations, and clear titles improve comprehension for almost all users. A chart title should state what the chart shows. An annotation should explain what matters. A label should remove the need to cross-reference a legend wherever possible.</p>
+    </div>
+
+    <div class="card ">
+      <div class="kicker kicker--orange">PRINCIPLE 04</div>
+      <h3 class="card-title">Charts shape conclusions before logic does</h3>
+      <p class="text-body-sm">People see first and think second. A chart forms an impression before critical thinking engages. Once that impression is formed, reasoning tends to justify it rather than challenge it. This is why small visual decisions — axis range, colour order, chart type — carry disproportionate weight.</p>
+    </div>
+
+    <div class="card ">
+      <div class="kicker kicker--orange">PRINCIPLE 05</div>
+      <h3 class="card-title">Aesthetic choices have data consequences</h3>
+      <p class="text-body-sm">Introducing a colour accent to add visual interest, or swapping a bar chart for a donut to add variety, are not neutral decisions. The first creates a false hierarchy of importance. The second degrades readability. Every visual decision should be justified by what it communicates, not by how it looks.</p>
+    </div>
+
+    <div class="card ">
+      <div class="kicker kicker--orange">PRINCIPLE 06</div>
+      <h3 class="card-title">Reduce what the brain has to work through</h3>
+      <p class="text-body-sm">Cognitive load accumulates. A chart asking the reader to compare areas, decode two y-axes, cross-reference a legend, and interpret colour simultaneously is too demanding. Remove every element that does not carry meaning. The goal is immediate comprehension, not demonstrating complexity.</p>
+    </div>
+
+  </div>
+
+  <!-- Perceptual hierarchy visual -->
+  <p class="card-label mb-sm">Perceptual Accuracy Hierarchy — Cleveland &amp; McGill</p>
+  <div class="card card--lg-pad">
+    <div class="col-sm">
+
+      <div class="row-md">
+        <div class="col-fixed-110 mono-sm text-muted text-right">Most accurate</div>
+        <div style="flex:1; background:var(--brand-yellow); height:28px; border-radius:3px; display:flex; align-items:center; padding:0 0.75rem;">
+          <span style="font-size:0.75rem; font-weight:600; color:var(--ink);">Position on a common scale</span>
+        </div>
+      </div>
+      <div class="row-md">
+        <div class="col-fixed-110"></div>
+        <div style="flex:1; background:var(--yellow-75); height:28px; border-radius:3px; display:flex; align-items:center; padding:0 0.75rem;">
+          <span style="font-size:0.75rem; font-weight:500; color:var(--ink);">Position on non-aligned scales</span>
+        </div>
+      </div>
+      <div class="row-md">
+        <div class="col-fixed-110"></div>
+        <div style="flex:1; background:var(--yellow-50); height:28px; border-radius:3px; display:flex; align-items:center; padding:0 0.75rem;">
+          <span class="text-xs text-dark">Length</span>
+        </div>
+      </div>
+      <div class="row-md">
+        <div class="col-fixed-110"></div>
+        <div style="flex:1; background:var(--orange-25); height:28px; border-radius:3px; display:flex; align-items:center; padding:0 0.75rem; border:1px solid #e8c0a8;">
+          <span class="text-xs text-dark">Direction / slope</span>
+        </div>
+      </div>
+      <div class="row-md">
+        <div class="col-fixed-110"></div>
+        <div style="flex:1; background:var(--orange-50); height:28px; border-radius:3px; display:flex; align-items:center; padding:0 0.75rem;">
+          <span class="text-xs text-dark">Angle / area</span>
+        </div>
+      </div>
+      <div class="row-md">
+        <div class="col-fixed-110"></div>
+        <div style="flex:1; background:var(--orange-75); height:28px; border-radius:3px; display:flex; align-items:center; padding:0 0.75rem;">
+          <span style="font-size:0.75rem; color:var(--ink-soft);">Volume / curvature</span>
+        </div>
+      </div>
+      <div class="row-md">
+        <div class="col-fixed-110 mono-sm text-muted text-right">Least accurate</div>
+        <div style="flex:1; background:var(--brand-orange); height:28px; border-radius:3px; display:flex; align-items:center; padding:0 0.75rem;">
+          <span style="font-size:0.75rem; color:#fff;">Colour / shading</span>
+        </div>
+      </div>
+    </div>
+    <p class="mono-xxs mt-sm">↗ Bar and line charts sit at the top (position + length). Pie, donut, and bubble charts sit in the middle to bottom (angle, area). Colour alone is the least reliable encoding and should always be supplemented.</p>
+  </div>
+
+  <!-- Manipulation awareness -->
+  <p class="divider-heading">Unintentional Manipulation — What to watch for</p>
+  <div class="callout" style="border-left-color:var(--brand-orange); background:var(--brand-orange-light);">
+    <strong>Visualisation is not neutral.</strong> It is a tool of influence — even when that influence is unintended. Manipulation does not require dishonest data. It begins where form pushes the viewer toward a conclusion and leaves no room for doubt.
+  </div>
+
+  <div class="grid-2 mt-sm">
+    <div class="card-sm">
+      <h4 class="card-title-sm card-title--orange">⚠ Truncated Y-axis</h4>
+      <p class="text-sm">Starting a bar chart axis at a value other than zero exaggerates differences between bars. Small changes appear dramatic. Always start bar chart axes at zero; reserve non-zero baselines for line charts where the trend matters more than the absolute magnitude.</p>
+    </div>
+    <div class="card-sm">
+      <h4 class="card-title-sm card-title--orange">⚠ Colour emphasis without data reason</h4>
+      <p class="text-sm">Highlighting one bar or segment in brand colour while leaving others neutral signals importance to the reader — even if the data does not warrant it. In this guide, brand colour accents must correspond to a genuine data reason: a peak, an outlier, a target. Not aesthetic variety.</p>
+    </div>
+    <div class="card-sm">
+      <h4 class="card-title-sm card-title--orange">⚠ Dual Y-axes</h4>
+      <p class="text-sm">Two y-axes on a single chart invite the eye to draw correlations between lines that may not exist. The visual alignment of two lines feels meaningful even when the scales are entirely independent. If dual axes are unavoidable, label both axes clearly and add an explicit note warning the reader.</p>
+    </div>
+    <div class="card-sm">
+      <h4 class="card-title-sm card-title--orange">⚠ 3D and perspective effects</h4>
+      <p class="text-sm">Three-dimensional charts distort perceived proportions through foreshortening. The front face of a 3D bar appears larger than the back. Perspective angles make equal slices look unequal. 3D adds visual complexity without adding data. It should not be used in any chart in this system.</p>
+    </div>
+  </div>
+</section>

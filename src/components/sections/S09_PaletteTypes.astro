@@ -1,0 +1,76 @@
+---
+// Section 09 — Palette Types
+---
+
+<section id="section-09">
+<div class="section-header">
+    <span class="section-number">09</span>
+    <h2>Palette Types</h2>
+  </div>
+  <p style="font-size:0.875rem; color:var(--ink-mid); max-width:660px; margin-bottom:2rem;">Three palette types cover every data scenario. Choosing the right type is as important as choosing the right chart — using a sequential palette for categorical data introduces visual relationships that do not exist in the numbers.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.25rem; margin-bottom:2rem;">
+
+    <div style="background:var(--white); border-radius:6px; overflow:hidden; border:1px solid var(--rule);">
+      <div style="padding:1.25rem 1.25rem 0.5rem;">
+        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--brand-yellow-dark); letter-spacing:0.12em; margin-bottom:0.4rem;">TYPE A</div>
+        <h3 style="font-family:var(--font-display); font-weight:500; font-size:1rem; margin-bottom:0.5rem;">Qualitative</h3>
+        <p style="font-size:0.78rem; color:var(--ink-mid); line-height:1.5; margin-bottom:0.5rem;">For categorical data with no inherent order. Each colour is visually distinct with comparable brightness — no colour should appear more important than another.</p>
+        <p style="font-family:var(--font-mono); font-size:0.65rem; color:var(--ink-soft);">USE FOR: product types, regions, named segments</p>
+      </div>
+      <div style="padding:0.75rem 1.25rem 1.25rem; display:flex; flex-direction:column; gap:0.35rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FFCD00;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">Cat A — #FFCD00</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FF4F00;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">Cat B — #FF4F00</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#00897B;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">Cat C — #00897B</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#1565C0;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">Cat D — #1565C0</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#6A1B9A;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">Cat E — #6A1B9A</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#455A64;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">Cat F — #455A64</span></div>
+      </div>
+    </div>
+
+    <div style="background:var(--white); border-radius:6px; overflow:hidden; border:1px solid var(--rule);">
+      <div style="padding:1.25rem 1.25rem 0.5rem;">
+        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--brand-yellow-dark); letter-spacing:0.12em; margin-bottom:0.4rem;">TYPE B</div>
+        <h3 style="font-family:var(--font-display); font-weight:500; font-size:1rem; margin-bottom:0.5rem;">Sequential</h3>
+        <p style="font-size:0.78rem; color:var(--ink-mid); line-height:1.5; margin-bottom:0.5rem;">For numeric data with a natural order. A single hue progresses from light (low) to fully saturated (high). Use the 25–100% tint ramps from Section 01b.</p>
+        <p style="font-family:var(--font-mono); font-size:0.65rem; color:var(--ink-soft);">USE FOR: heatmaps, ranked bars, intensity maps</p>
+      </div>
+      <div style="padding:0.75rem 1.25rem 1.25rem; display:flex; flex-direction:column; gap:0.35rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FEF2BE;border:1px solid #e8e0a0;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FEF2BE — Y25% Low</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FEE67F;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FEE67F — Y50%</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FFD940;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FFD940 — Y75%</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FFCD00;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FFCD00 — Y100% High</span></div>
+        <div style="height:1px;background:var(--rule);margin:0.2rem 0;"></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FED2BE;border:1px solid #e8c0a8;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FED2BE — O25% Low</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FEA67F;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FEA67F — O50%</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FF7B40;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FF7B40 — O75%</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><div style="width:28px;height:16px;background:#FF4F00;border-radius:2px;"></div><span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--ink-soft);">#FF4F00 — O100% High</span></div>
+      </div>
+    </div>
+
+    <div style="background:var(--white); border-radius:6px; overflow:hidden; border:1px solid var(--rule);">
+      <div style="padding:1.25rem 1.25rem 0.5rem;">
+        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--brand-yellow-dark); letter-spacing:0.12em; margin-bottom:0.4rem;">TYPE C</div>
+        <h3 style="font-family:var(--font-display); font-weight:500; font-size:1rem; margin-bottom:0.5rem;">Divergent</h3>
+        <p style="font-size:0.78rem; color:var(--ink-mid); line-height:1.5; margin-bottom:0.5rem;">Two sequential scales meeting at a neutral midpoint. For data with a meaningful centre — where values above and below zero carry opposite significance.</p>
+        <p style="font-family:var(--font-mono); font-size:0.65rem; color:var(--ink-soft);">USE FOR: above/below target, positive/negative change, sentiment</p>
+      </div>
+      <div style="padding:0.75rem 1.25rem 1.25rem;">
+        <div style="display:flex; height:22px; border-radius:3px; overflow:hidden; margin-bottom:0.5rem;">
+          <div style="flex:1;background:#FF4F00;"></div>
+          <div style="flex:1;background:#FF7B40;"></div>
+          <div style="flex:1;background:#FEA67F;"></div>
+          <div style="flex:1;background:#E0E0E0;"></div>
+          <div style="flex:1;background:#FEE67F;"></div>
+          <div style="flex:1;background:#FFD940;"></div>
+          <div style="flex:1;background:#FFCD00;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.6rem; color:var(--ink-soft); margin-bottom:0.75rem;">
+          <span>Negative</span><span>#E0E0E0</span><span>Positive</span>
+        </div>
+        <p style="font-size:0.75rem; color:var(--ink-mid); line-height:1.5; margin-bottom:0.5rem;">Orange anchors negative; Yellow anchors positive; Rule grey as neutral midpoint.</p>
+        <div style="padding:0.5rem 0.75rem; background:var(--brand-yellow-light); border-radius:3px; font-size:0.7rem; color:var(--ink-mid);"><strong>Avoid red/green</strong> — culturally ambiguous and inaccessible for colour-blind users.</div>
+      </div>
+    </div>
+
+  </div>
+</section>

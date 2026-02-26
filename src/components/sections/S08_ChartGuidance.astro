@@ -1,0 +1,99 @@
+---
+---
+
+<section id="section-08">
+  <div class="section-header">
+    <span class="section-number">08</span>
+    <h2>Chart Type Guidance</h2>
+  </div>
+
+  <p class="section-intro">Choosing the wrong chart type is the most common source of confusion in data visualisation. The table below summarises when each type is appropriate, when it should be avoided, and what to use instead.</p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>Chart type</th>
+        <th>Cognitive demand</th>
+        <th>Use when</th>
+        <th>Avoid when</th>
+        <th>Prefer instead</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Bar chart</strong></td>
+        <td><span class="badge pass">Low</span></td>
+        <td class="text-sm">Comparing discrete categories; showing magnitude; ranking.</td>
+        <td class="text-sm">Showing trends over many time points.</td>
+        <td class="text-sm">— (default choice for comparisons)</td>
+      </tr>
+      <tr>
+        <td><strong>Line chart</strong></td>
+        <td><span class="badge pass">Low</span></td>
+        <td class="text-sm">Continuous data over time; showing trends and rates of change.</td>
+        <td class="text-sm">Comparing discrete unordered categories.</td>
+        <td class="text-sm">Bar chart for discrete comparisons</td>
+      </tr>
+      <tr>
+        <td><strong>Donut chart</strong></td>
+        <td><span class="badge warn">High</span></td>
+        <td class="text-sm">Only if a single key number in the centre is the primary message; few segments with large, obvious differences.</td>
+        <td class="text-sm">Comparing multiple similar-sized segments; more than 4–5 segments; when precise proportions matter.</td>
+        <td class="text-sm">Horizontal bar chart; stacked bar (single bar)</td>
+      </tr>
+      <tr>
+        <td><strong>Stacked bar</strong></td>
+        <td><span class="badge warn">Medium</span></td>
+        <td class="text-sm">Showing part-to-whole composition within a single bar; when cross-bar comparison is not required.</td>
+        <td class="text-sm">Comparing individual segments across multiple bars — only the bottom segment has a stable baseline.</td>
+        <td class="text-sm">Grouped bar chart; small multiples</td>
+      </tr>
+      <tr>
+        <td><strong>Heatmap</strong></td>
+        <td><span class="badge warn">Medium</span></td>
+        <td class="text-sm">Density overview; anomaly detection; pattern scanning across two categorical dimensions.</td>
+        <td class="text-sm">When precise values matter; without a clear legend and scale; as a final conclusion rather than an exploratory layer.</td>
+        <td class="text-sm">Bar chart with direct labels for precise comparison</td>
+      </tr>
+      <tr>
+        <td><strong>Bubble chart</strong></td>
+        <td><span class="badge fail">Very high</span></td>
+        <td class="text-sm">Distribution matters more than precise comparison; interactive support with tooltips is available; audience is analytically experienced.</td>
+        <td class="text-sm">Precise comparison is needed; static format without tooltips; more than ~20 bubbles.</td>
+        <td class="text-sm">Scatter plot (position only); bar chart</td>
+      </tr>
+      <tr>
+        <td><strong>Radar / spider</strong></td>
+        <td><span class="badge fail">Very high</span></td>
+        <td class="text-sm">High-level storytelling only, where shape impression is the message and no numeric decisions will be made.</td>
+        <td class="text-sm">Any analytical context; when values need to be compared accurately; more than one entity being compared.</td>
+        <td class="text-sm">Small multiples of bar charts; parallel coordinates</td>
+      </tr>
+      <tr>
+        <td><strong>Dual-axis</strong></td>
+        <td><span class="badge fail">Very high</span></td>
+        <td class="text-sm">Only if the reader is explicitly informed they are viewing two independent scales and understands what that means.</td>
+        <td class="text-sm">General audience dashboards; anywhere a false correlation could be implied.</td>
+        <td class="text-sm">Two separate charts; small multiples</td>
+      </tr>
+      <tr>
+        <td><strong>Sankey diagram</strong></td>
+        <td><span class="badge warn">High</span></td>
+        <td class="text-sm">Flows and transitions are the core meaning of the data; this is the primary chart on the page, not supplementary.</td>
+        <td class="text-sm">As a supporting or secondary chart; when the audience has no prior exposure; dense datasets with many nodes.</td>
+        <td class="text-sm">Stacked bar for proportions; alluvial chart for simpler flows</td>
+      </tr>
+      <tr>
+        <td><strong>Gauge / radial</strong></td>
+        <td><span class="badge warn">Medium</span></td>
+        <td class="text-sm">Single KPI with a clear target and known range; used sparingly in an executive or summary context.</td>
+        <td class="text-sm">Multiple gauges compared side by side; when precise values matter more than progress-toward-target.</td>
+        <td class="text-sm">Bullet chart; progress bar</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout mt-md">
+    <strong>Default to bar and line charts.</strong> They sit at the top of the perceptual accuracy hierarchy and are the forms most people process automatically. Reach for other chart types only when bar or line genuinely cannot represent the data structure — not for visual variety.
+  </div>
+</section>

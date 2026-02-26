@@ -1,0 +1,140 @@
+---
+// SideNav — sticky section navigation with active state
+---
+
+<nav id="sidenav" aria-label="Style guide sections">
+  <div class="nav-header">
+    <span class="nav-brand">DDL</span>
+    <span class="nav-version">v2.0</span>
+  </div>
+  <ul class="nav-list">
+        <li><a href="#section-00" class="nav-link" data-section="00"><span class="nav-num">00</span><span class="nav-label">Design Values</span></a></li>
+        <li><a href="#section-01" class="nav-link" data-section="01"><span class="nav-num">01</span><span class="nav-label">Colour Palette</span></a></li>
+        <li><a href="#section-01b" class="nav-link" data-section="01b"><span class="nav-num">01b</span><span class="nav-label">Tints</span></a></li>
+        <li><a href="#section-01c" class="nav-link" data-section="01c"><span class="nav-num">01c</span><span class="nav-label">Extended Palette &amp; Types</span></a></li>
+        <li><a href="#section-02" class="nav-link" data-section="02"><span class="nav-num">02</span><span class="nav-label">Accessibility</span></a></li>
+        <li><a href="#section-03" class="nav-link" data-section="03"><span class="nav-num">03</span><span class="nav-label">Usage Rules</span></a></li>
+        <li><a href="#section-04" class="nav-link" data-section="04"><span class="nav-num">04</span><span class="nav-label">Chart Examples</span></a></li>
+        <li><a href="#section-05" class="nav-link" data-section="05"><span class="nav-num">05</span><span class="nav-label">Tooltips</span></a></li>
+        <li><a href="#section-06" class="nav-link" data-section="06"><span class="nav-num">06</span><span class="nav-label">Typography</span></a></li>
+        <li><a href="#section-07" class="nav-link" data-section="07"><span class="nav-num">07</span><span class="nav-label">Readability</span></a></li>
+        <li><a href="#section-08" class="nav-link" data-section="08"><span class="nav-num">08</span><span class="nav-label">Chart Guidance</span></a></li>
+        <li><a href="#section-10" class="nav-link" data-section="10"><span class="nav-num">10</span><span class="nav-label">Uncertainty</span></a></li>
+        <li><a href="#section-11" class="nav-link" data-section="11"><span class="nav-num">11</span><span class="nav-label">Responsive</span></a></li>
+        <li><a href="#section-12" class="nav-link" data-section="12"><span class="nav-num">12</span><span class="nav-label">Interaction</span></a></li>
+        <li><a href="#section-13" class="nav-link" data-section="13"><span class="nav-num">13</span><span class="nav-label">Chart Library</span></a></li>
+        <li><a href="#section-14" class="nav-link" data-section="14"><span class="nav-num">14</span><span class="nav-label">Storytelling</span></a></li>
+  </ul>
+  <div class="nav-footer">
+    <div class="nav-swatch" style="background:#FFCD00;"></div>
+    <div class="nav-swatch" style="background:#FF4F00;"></div>
+  </div>
+</nav>
+
+<script>
+  // Intersection Observer — highlight active section in nav
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id.replace('section-', '');
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[data-section="${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+<style>
+  #sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 100;
+    scrollbar-width: thin;
+    scrollbar-color: var(--brand-yellow) var(--ink);
+  }
+  .nav-header {
+    padding: 1.25rem 1rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-brand {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--brand-yellow);
+    letter-spacing: 0.05em;
+  }
+  .nav-version {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.3);
+  }
+  .nav-list {
+    list-style: none;
+    padding: 0.5rem 0;
+    flex: 1;
+  }
+  .nav-link {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.42rem 1rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-link:hover {
+    background: rgba(255,255,255,0.06);
+  }
+  .nav-link.active {
+    background: rgba(255,205,0,0.12);
+    border-left: 2px solid var(--brand-yellow);
+    padding-left: calc(1rem - 2px);
+  }
+  .nav-link.active .nav-num {
+    color: var(--brand-yellow);
+  }
+  .nav-link.active .nav-label {
+    color: var(--white);
+  }
+  .nav-num {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+    width: 22px;
+  }
+  .nav-label {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.3;
+  }
+  .nav-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .nav-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+  }
+</style>

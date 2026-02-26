@@ -1,0 +1,73 @@
+---
+---
+
+<section id="section-11">
+  <div class="section-header">
+    <span class="section-number">11</span>
+    <h2>Responsive Design &amp; Chart Sizing</h2>
+  </div>
+  <p class="section-intro">A chart's container size affects more than font size — it determines which chart type is appropriate and what level of detail can be shown. Chart type selection must account for the presentation context from the outset.</p>
+
+  <div class="grid-3 mb-lg">
+    <div class="card card--flush">
+      <div style="background:var(--brand-yellow); padding:0.75rem 1.25rem;">
+        <div class="card-label-bold">Small — up to 320px</div>
+      </div>
+      <div class="card-body-text">
+        <p><strong class="text-dark">Chart types:</strong> Single number, sparkline, simple bar (3–5 bars), donut with one key figure.</p>
+        <p><strong class="text-dark">Labels:</strong> Title only. No axis labels. Direct data labels if essential.</p>
+        <p><strong class="text-dark">Interaction:</strong> None — all key info visible without interaction.</p>
+        <p><strong class="text-dark">Type scale:</strong> 12px min, 20px title.</p>
+      </div>
+    </div>
+    <div class="card card--flush">
+      <div style="background:var(--yellow-75); padding:0.75rem 1.25rem;">
+        <div class="card-label-bold">Medium — 321–768px</div>
+      </div>
+      <div class="card-body-text">
+        <p><strong class="text-dark">Chart types:</strong> Bar, line, stacked bar, donut, scatter. Max 3 series on multi-line.</p>
+        <p><strong class="text-dark">Labels:</strong> Title, subtitle, axis labels. Legend if needed.</p>
+        <p><strong class="text-dark">Interaction:</strong> Hover tooltips acceptable. No click-to-reveal for key data.</p>
+        <p><strong class="text-dark">Type scale:</strong> 14px body, 24px title.</p>
+      </div>
+    </div>
+    <div class="card card--flush">
+      <div style="background:var(--yellow-50); padding:0.75rem 1.25rem;">
+        <div class="card-label-bold">Large — 769px+</div>
+      </div>
+      <div class="card-body-text">
+        <p><strong class="text-dark">Chart types:</strong> Full range — heatmaps, scatter, Sankey, multi-series, small multiples.</p>
+        <p><strong class="text-dark">Labels:</strong> Full hierarchy — title, subtitle, axes, legend, source, annotations.</p>
+        <p><strong class="text-dark">Interaction:</strong> Filters, zoom, selection, full tooltip exploration.</p>
+        <p><strong class="text-dark">Type scale:</strong> 16px body, up to 52px hero numbers.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="card-label mb-sm">Typography Scale by Chart Size</p>
+  <table class="contrast-table mb-md">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th class="text-center text-yellow">Small</th>
+        <th class="text-center text-yellow">Medium</th>
+        <th class="text-center text-yellow">Large</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Chart Title (xxl)</td><td class="mono-xs text-center">20px</td><td class="mono-xs text-center">24px</td><td class="mono-xs text-center">32px</td></tr>
+      <tr><td>Subtitle (xl)</td><td class="mono-xs text-center">16px</td><td class="mono-xs text-center">20px</td><td class="mono-xs text-center">24px</td></tr>
+      <tr><td>Body / Legend (m)</td><td class="mono-xs text-center">14px</td><td class="mono-xs text-center">16px</td><td class="mono-xs text-center">20px</td></tr>
+      <tr><td>Axis Labels (s)</td><td class="mono-xs text-center">12px</td><td class="mono-xs text-center">14px</td><td class="mono-xs text-center">16px</td></tr>
+      <tr><td>Minimum (xs)</td><td class="mono-xs text-center">10px</td><td class="mono-xs text-center">12px</td><td class="mono-xs text-center">14px</td></tr>
+    </tbody>
+  </table>
+
+  <p class="card-label mb-sm">Channel Considerations</p>
+  <div class="grid-4">
+    <div class="card-sm card--center"><div class="icon-lg">🖥</div><div class="card-title-xs">Web</div><div class="text-xxs">Full palette, hover, tooltips, animation, dynamic filtering</div></div>
+    <div class="card-sm card--center"><div class="icon-lg">🖨</div><div class="card-title-xs">Print / PDF</div><div class="text-xxs">No interaction. Enable background graphics. Consider greyscale fallback.</div></div>
+    <div class="card-sm card--center"><div class="icon-lg">📱</div><div class="card-title-xs">Social</div><div class="text-xxs">Static image. Bold, simple charts. Embed the key number in the title.</div></div>
+    <div class="card-sm card--center"><div class="icon-lg">🎤</div><div class="card-title-xs">Presentation</div><div class="text-xxs">Larger fonts, fewer data points. Chart must communicate in 3 seconds.</div></div>
+  </div>
+</section>

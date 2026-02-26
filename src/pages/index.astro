@@ -1,0 +1,53 @@
+---
+// index.astro — Data Visualisation Style Guide
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import TopNav from '../components/TopNav.astro';
+
+
+// Section components
+import S00 from '../components/sections/S00_DesignValues.astro';
+import S01 from '../components/sections/S01_ColourPalette.astro';
+import S01b from '../components/sections/S01b_Tints.astro';
+import S01c from '../components/sections/S01c_ExtendedPalette.astro';
+import S02 from '../components/sections/S02_Accessibility.astro';
+import S03 from '../components/sections/S03_UsageRules.astro';
+import S04 from '../components/sections/S04_ChartExamples.astro';
+import S05 from '../components/sections/S05_Tooltips.astro';
+import S06 from '../components/sections/S06_Typography.astro';
+import S07 from '../components/sections/S07_Readability.astro';
+import S08 from '../components/sections/S08_ChartGuidance.astro';
+import S10 from '../components/sections/S10_Uncertainty.astro';
+import S11 from '../components/sections/S11_Responsive.astro';
+import S12 from '../components/sections/S12_Interaction.astro';
+import S13 from '../components/sections/S13_ChartLibrary.astro';
+import S14 from '../components/sections/S14_Storytelling.astro';
+
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="Data Visualisation Style Guide">
+  <TopNav />
+  <div id="page-content">
+    <Header />
+    <main>
+      <S00 />
+      <S01 />
+      <S01b />
+      <S01c />
+      <S02 />
+      <S03 />
+      <S04 />
+      <S05 />
+      <S06 />
+      <S07 />
+      <S08 />
+      <S10 />
+      <S11 />
+      <S12 />
+      <S13 />
+      <S14 />
+    </main>
+    <Footer />
+  </div>
+</Base>

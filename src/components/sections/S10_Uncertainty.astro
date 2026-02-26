@@ -1,0 +1,75 @@
+---
+---
+
+<section id="section-10">
+  <div class="section-header">
+    <span class="section-number">10</span>
+    <h2>Data Uncertainty &amp; Special Values</h2>
+  </div>
+  <p class="section-intro">Transparency about data quality is non-negotiable. Estimates, provisional figures, projections, and missing data must each be represented in a distinct and consistent way. Readers should always be able to judge how confident to be in any number.</p>
+
+  <div class="grid-2 mb-lg">
+    <div class="card">
+      <h4 class="card-title-bold">Estimates &amp; Projections</h4>
+      <p class="text-body-sm mb-sm">Use a dashed stroke for projected or estimated data in line charts. In bar charts, use a hatched or outlined fill. Always label the point of transition explicitly.</p>
+      <svg width="100%" viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="75" x2="260" y2="75" stroke="#E0E0E0" stroke-width="1"/>
+        <polyline points="20,55 70,45 120,35" fill="none" stroke="#FFCD00" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="20" cy="55" r="3.5" fill="#FFCD00" stroke="#1E1E1E" stroke-width="1.2"/>
+        <circle cx="70" cy="45" r="3.5" fill="#FFCD00" stroke="#1E1E1E" stroke-width="1.2"/>
+        <circle cx="120" cy="35" r="3.5" fill="#FFCD00" stroke="#1E1E1E" stroke-width="1.2"/>
+        <line x1="120" y1="10" x2="120" y2="75" stroke="#E0E0E0" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="122" y="18" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">Forecast</text>
+        <polyline points="120,35 170,25 220,18 260,12" fill="none" stroke="#FFCD00" stroke-width="2" stroke-dasharray="5,4" stroke-linejoin="round"/>
+        <circle cx="170" cy="25" r="3" fill="#FEFEFE" stroke="#FFCD00" stroke-width="2"/>
+        <circle cx="220" cy="18" r="3" fill="#FEFEFE" stroke="#FFCD00" stroke-width="2"/>
+        <circle cx="260" cy="12" r="3" fill="#FEFEFE" stroke="#FFCD00" stroke-width="2"/>
+        <text x="20" y="85" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">2022</text>
+        <text x="100" y="85" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">2024</text>
+        <text x="230" y="85" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">2026</text>
+      </svg>
+      <p class="mono-xxs mt-xxs">Solid + filled dots = confirmed. Dashed + open dots = projected.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="card-title-bold">Confidence Intervals</h4>
+      <p class="text-body-sm mb-sm">Uncertainty bands as a translucent area using the 50% tint of the series colour. Never omit uncertainty when it is material to the conclusion being drawn.</p>
+      <svg width="100%" viewBox="0 0 280 90" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="75" x2="260" y2="75" stroke="#E0E0E0" stroke-width="1"/>
+        <path d="M20,65 L70,52 L120,42 L170,35 L220,28 L260,22 L260,38 L220,44 L170,51 L120,58 L70,68 L20,75 Z" fill="#FEE67F" opacity="0.5"/>
+        <polyline points="20,70 70,60 120,50 170,43 220,36 260,30" fill="none" stroke="#FFCD00" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="20" cy="70" r="3.5" fill="#FFCD00" stroke="#1E1E1E" stroke-width="1.2"/>
+        <circle cx="260" cy="30" r="3.5" fill="#FFCD00" stroke="#1E1E1E" stroke-width="1.2"/>
+        <text x="20" y="85" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">2020</text>
+        <text x="230" y="85" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">2024</text>
+        <text x="175" y="30" font-size="7" fill="#CC9500" font-family="DM Mono,monospace">95% CI</text>
+      </svg>
+      <p class="mono-xxs mt-xxs">Yellow 50% tint band at 50% opacity around the primary line.</p>
+    </div>
+
+    <div class="card">
+      <h4 class="card-title-bold">Missing Data</h4>
+      <p class="text-body-sm mb-xs">Never leave a gap unexplained. Standard visual treatments by chart type:</p>
+      <div class="text-sm col-xs">
+        <div class="row-sm"><div style="width:28px;height:16px;background:repeating-linear-gradient(45deg,#E0E0E0,#E0E0E0 2px,#FEFEFE 2px,#FEFEFE 6px);border-radius:2px;flex-shrink:0;"></div><span>Bar — hatched Rule grey fill</span></div>
+        <div class="row-sm"><div style="width:28px;height:0;border-top:2px dashed #AAAAAA;flex-shrink:0;"></div><span>Line — explicit break + label</span></div>
+        <div class="row-sm"><div style="width:14px;height:14px;border-radius:50%;border:2px dashed #AAAAAA;flex-shrink:0;"></div><span>Scatter — hollow grey outline marker</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 class="card-title-bold">Degree of Precision</h4>
+      <p class="text-body-sm mb-xs">Show numbers only to the precision the data warrants. Excessive decimal places imply false accuracy.</p>
+      <table style="width:100%;font-size:0.75rem;border-collapse:collapse;">
+        <tr class="border-bottom">
+          <th class="td-mono">Context</th>
+          <th class="td-mono">Use</th>
+          <th class="td-mono">Avoid</th>
+        </tr>
+        <tr class="border-bottom"><td class="td-text">Large numbers</td><td class="td-mono-plain">£2.4M</td><td class="td-mono-fail">£2,412,847.23</td></tr>
+        <tr class="border-bottom"><td class="td-text">Percentages</td><td class="td-mono-plain">34%</td><td class="td-mono-fail">34.2817%</td></tr>
+        <tr><td class="td-text">Growth rates</td><td class="td-mono-plain">+12%</td><td class="td-mono-fail">+12.4491%</td></tr>
+      </table>
+    </div>
+  </div>
+</section>

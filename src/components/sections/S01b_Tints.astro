@@ -1,0 +1,193 @@
+---
+---
+
+<section id="section-01b">
+  <div class="section-header">
+    <span class="section-number">01b</span>
+    <h2>Tints — Usage Guide</h2>
+  </div>
+
+  <p class="section-intro">Tints extend each brand colour into a sequential scale, useful for heatmaps, area fills, confidence bands, and ranked data. Use them purposefully — lighter tints carry less visual weight and lower contrast, so their role should reflect that hierarchy.</p>
+
+  <!-- Contrast reference table -->
+  <p class="card-label mb-sm">Contrast Reference — tints vs surface (#FEFEFE) and ink (#1E1E1E)</p>
+  <table class="contrast-table mb-xl">
+    <thead>
+      <tr>
+        <th>Tint</th>
+        <th>Hex</th>
+        <th>Preview</th>
+        <th>vs Surface</th>
+        <th>vs Ink text</th>
+        <th>Safe uses</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Yellow 25%</td>
+        <td><span class="badge" style="background:#FEF2BE;color:#1E1E1E;border:1px solid #ddd;">#FEF2BE</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FEF2BE;border-radius:2px;border:1px solid #ddd;"></span></td>
+        <td><span class="badge fail">1.12:1</span></td>
+        <td><span class="badge pass">14.81:1</span></td>
+        <td>Background wash, row stripe only</td>
+      </tr>
+      <tr>
+        <td>Yellow 50%</td>
+        <td><span class="badge" style="background:#FEE67F;color:#1E1E1E;">#FEE67F</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FEE67F;border-radius:2px;"></span></td>
+        <td><span class="badge fail">1.24:1</span></td>
+        <td><span class="badge pass">13.37:1</span></td>
+        <td>Area fills + dark text labels only</td>
+      </tr>
+      <tr>
+        <td>Yellow 75%</td>
+        <td><span class="badge" style="background:#FFD940;color:#1E1E1E;">#FFD940</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FFD940;border-radius:2px;"></span></td>
+        <td><span class="badge fail">1.37:1</span></td>
+        <td><span class="badge pass">12.11:1</span></td>
+        <td>Sequential bars, area fills + dark text</td>
+      </tr>
+      <tr>
+        <td>Yellow 100%</td>
+        <td><span class="badge badge--yellow">#FFCD00</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FFCD00;border-radius:2px;"></span></td>
+        <td><span class="badge fail">1.49:1</span></td>
+        <td><span class="badge pass">11.10:1</span></td>
+        <td>Primary data; always with dark text</td>
+      </tr>
+      <tr>
+        <td>Orange 25%</td>
+        <td><span class="badge" style="background:#FED2BE;color:#1E1E1E;border:1px solid #ddd;">#FED2BE</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FED2BE;border-radius:2px;border:1px solid #ddd;"></span></td>
+        <td><span class="badge fail">1.37:1</span></td>
+        <td><span class="badge pass">12.05:1</span></td>
+        <td>Background wash only</td>
+      </tr>
+      <tr>
+        <td>Orange 50%</td>
+        <td><span class="badge" style="background:#FEA67F;color:#1E1E1E;">#FEA67F</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FEA67F;border-radius:2px;"></span></td>
+        <td><span class="badge fail">1.90:1</span></td>
+        <td><span class="badge pass">8.71:1</span></td>
+        <td>Area fills + dark text labels only</td>
+      </tr>
+      <tr>
+        <td>Orange 75%</td>
+        <td><span class="badge" style="background:#FF7B40;color:#1E1E1E;">#FF7B40</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FF7B40;border-radius:2px;"></span></td>
+        <td><span class="badge warn">2.55:1</span></td>
+        <td><span class="badge pass">6.48:1</span></td>
+        <td>Sequential steps; test at target size</td>
+      </tr>
+      <tr>
+        <td>Orange 100%</td>
+        <td><span class="badge badge--orange">#FF4F00</span></td>
+        <td><span style="display:inline-block;width:32px;height:20px;background:#FF4F00;border-radius:2px;"></span></td>
+        <td><span class="badge pass">3.27:1</span></td>
+        <td><span class="badge pass">5.06:1</span></td>
+        <td>Full use — white or dark text</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Key rule:</strong> No tint passes WCAG AA contrast against the surface (#FEFEFE) on its own. They are safe as <em>fills</em> when paired with dark (#1E1E1E) text labels, or as decorative backgrounds. <strong>Never use tints as the sole differentiator between data categories</strong> — always pair with a label, value, or pattern.
+  </div>
+
+  <!-- Sequential chart examples -->
+  <p class="divider-heading">Tints in practice — Sequential Charts</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+
+    <!-- Sequential bar: Yellow scale -->
+    <div class="chart-card">
+      <div class="chart-title">Sequential Bar — Yellow Scale</div>
+      <div class="chart-subtitle">Ranking by volume; lightest = lowest, 100% = highest.</div>
+      <svg width="100%" viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axis -->
+        <line x1="100" y1="20" x2="100" y2="178" stroke="#E0E0E0" stroke-width="1"/>
+        <line x1="100" y1="178" x2="325" y2="178" stroke="#E0E0E0" stroke-width="1"/>
+        <!-- Gridlines -->
+        <line x1="156" y1="20" x2="156" y2="178" stroke="#E0E0E0" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="213" y1="20" x2="213" y2="178" stroke="#E0E0E0" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <line x1="270" y1="20" x2="270" y2="178" stroke="#E0E0E0" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <!-- X axis labels -->
+        <text x="100" y="190" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">0</text>
+        <text x="156" y="190" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">25</text>
+        <text x="213" y="190" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">50</text>
+        <text x="270" y="190" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">75</text>
+        <!-- Bars: 5 categories ranked low→high, yellow 25%→100% -->
+        <!-- Row 1: 18 units → ~40px → Yellow 25% -->
+        <text x="96" y="45" font-size="8.5" fill="#3D3D3D" text-anchor="end" font-family="Public Sans,sans-serif">Region E</text>
+        <rect x="101" y="32" width="40" height="20" fill="#FEF2BE" stroke="#E8E0A0" stroke-width="0.5" rx="2"/>
+        <text x="144" y="45" font-size="7.5" fill="#1E1E1E" font-family="DM Mono,monospace">18</text>
+        <!-- Row 2: 35 units → ~78px → Yellow 50% -->
+        <text x="96" y="81" font-size="8.5" fill="#3D3D3D" text-anchor="end" font-family="Public Sans,sans-serif">Region D</text>
+        <rect x="101" y="68" width="78" height="20" fill="#FEE67F" rx="2"/>
+        <text x="182" y="81" font-size="7.5" fill="#1E1E1E" font-family="DM Mono,monospace">35</text>
+        <!-- Row 3: 52 units → ~116px → Yellow 75% -->
+        <text x="96" y="117" font-size="8.5" fill="#3D3D3D" text-anchor="end" font-family="Public Sans,sans-serif">Region C</text>
+        <rect x="101" y="104" width="116" height="20" fill="#FFD940" rx="2"/>
+        <text x="220" y="117" font-size="7.5" fill="#1E1E1E" font-family="DM Mono,monospace">52</text>
+        <!-- Row 4: 68 units → ~152px → Yellow 100% -->
+        <text x="96" y="153" font-size="8.5" fill="#3D3D3D" text-anchor="end" font-family="Public Sans,sans-serif">Region B</text>
+        <rect x="101" y="140" width="152" height="20" fill="#FFCD00" rx="2"/>
+        <text x="256" y="153" font-size="7.5" fill="#1E1E1E" font-family="DM Mono,monospace">68</text>
+      </svg>
+      <div class="chart-note">↗ Single hue, four steps. Tint encodes rank — no legend needed. Dark labels on all fills.</div>
+    </div>
+
+    <!-- Heatmap: Orange scale -->
+    <div class="chart-card">
+      <div class="chart-title">Heatmap — Orange Scale</div>
+      <div class="chart-subtitle">Engagement intensity by day and hour; 25%→100% = low→high.</div>
+      <svg width="100%" viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+        <!-- Row labels -->
+        <text x="30" y="52"  font-size="8" fill="#6B6B6B" text-anchor="end" font-family="DM Mono,monospace">Mon</text>
+        <text x="30" y="88"  font-size="8" fill="#6B6B6B" text-anchor="end" font-family="DM Mono,monospace">Tue</text>
+        <text x="30" y="124" font-size="8" fill="#6B6B6B" text-anchor="end" font-family="DM Mono,monospace">Wed</text>
+        <text x="30" y="160" font-size="8" fill="#6B6B6B" text-anchor="end" font-family="DM Mono,monospace">Thu</text>
+        <!-- Col labels -->
+        <text x="58"  y="22" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">9am</text>
+        <text x="113" y="22" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">11am</text>
+        <text x="168" y="22" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">1pm</text>
+        <text x="223" y="22" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">3pm</text>
+        <text x="278" y="22" font-size="7" fill="#6B6B6B" text-anchor="middle" font-family="DM Mono,monospace">5pm</text>
+
+        <!-- Row 1: Mon -->
+        <rect x="35"  y="30" width="46" height="32" rx="3" fill="#FED2BE"/>
+        <rect x="90"  y="30" width="46" height="32" rx="3" fill="#FEA67F"/>
+        <rect x="145" y="30" width="46" height="32" rx="3" fill="#FF4F00"/>
+        <rect x="200" y="30" width="46" height="32" rx="3" fill="#FF7B40"/>
+        <rect x="255" y="30" width="46" height="32" rx="3" fill="#FED2BE"/>
+        <!-- Row 2: Tue -->
+        <rect x="35"  y="66" width="46" height="32" rx="3" fill="#FEA67F"/>
+        <rect x="90"  y="66" width="46" height="32" rx="3" fill="#FF7B40"/>
+        <rect x="145" y="66" width="46" height="32" rx="3" fill="#FF4F00"/>
+        <rect x="200" y="66" width="46" height="32" rx="3" fill="#FF4F00"/>
+        <rect x="255" y="66" width="46" height="32" rx="3" fill="#FF7B40"/>
+        <!-- Row 3: Wed -->
+        <rect x="35"  y="102" width="46" height="32" rx="3" fill="#FED2BE"/>
+        <rect x="90"  y="102" width="46" height="32" rx="3" fill="#FED2BE"/>
+        <rect x="145" y="102" width="46" height="32" rx="3" fill="#FEA67F"/>
+        <rect x="200" y="102" width="46" height="32" rx="3" fill="#FF7B40"/>
+        <rect x="255" y="102" width="46" height="32" rx="3" fill="#FEA67F"/>
+        <!-- Row 4: Thu -->
+        <rect x="35"  y="138" width="46" height="32" rx="3" fill="#FEA67F"/>
+        <rect x="90"  y="138" width="46" height="32" rx="3" fill="#FF4F00"/>
+        <rect x="145" y="138" width="46" height="32" rx="3" fill="#FF4F00"/>
+        <rect x="200" y="138" width="46" height="32" rx="3" fill="#FF7B40"/>
+        <rect x="255" y="138" width="46" height="32" rx="3" fill="#FED2BE"/>
+
+        <!-- Legend -->
+        <rect x="35"  y="183" width="22" height="8" rx="1" fill="#FED2BE" stroke="#ddd" stroke-width="0.5"/>
+        <rect x="62"  y="183" width="22" height="8" rx="1" fill="#FEA67F"/>
+        <rect x="89"  y="183" width="22" height="8" rx="1" fill="#FF7B40"/>
+        <rect x="116" y="183" width="22" height="8" rx="1" fill="#FF4F00"/>
+        <text x="35"  y="200" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">Low</text>
+        <text x="127" y="200" font-size="7" fill="#6B6B6B" font-family="DM Mono,monospace">High</text>
+      </svg>
+      <div class="chart-note">↗ Orange scale from 25% → 100% encodes intensity. No border needed — tonal steps are distinct enough at this cell size.</div>
+    </div>
+
+  </div>
+</section>

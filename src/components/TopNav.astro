@@ -1,0 +1,116 @@
+---
+// SideNav — fixed left sidebar navigation
+const sections = [
+  { num: "00",  label: "Design Values" },
+  { num: "01",  label: "Colour Palette" },
+  { num: "01b", label: "Tints" },
+  { num: "01c", label: "Extended Palette" },
+  { num: "02",  label: "Accessibility" },
+  { num: "03",  label: "Usage Rules" },
+  { num: "04",  label: "Chart Examples" },
+  { num: "05",  label: "Tooltips" },
+  { num: "06",  label: "Typography" },
+  { num: "07",  label: "Readability" },
+  { num: "08",  label: "Chart Guidance" },
+  { num: "10",  label: "Uncertainty" },
+  { num: "11",  label: "Responsive" },
+  { num: "12",  label: "Interaction" },
+  { num: "13",  label: "Chart Library" },
+  { num: "14",  label: "Storytelling" },
+];
+---
+
+<nav id="sidenav" aria-label="Style guide sections">
+  <div class="sidenav-header">
+    <span class="sidenav-brand">DDL</span>
+    <span class="sidenav-version">v2.0</span>
+  </div>
+  <ul class="sidenav-menu" id="sidenav-menu" role="list">
+    {sections.map(({ num, label }) => (
+      <li>
+        <a href={`#section-${num}`} class="nav-link" data-section={num}>
+          <span class="nav-num">{num}</span>
+          <span class="nav-label">{label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<div id="sidenav-overlay" aria-hidden="true"></div>
+<button class="sidenav-toggle" id="sidenav-toggle" aria-expanded="false" aria-controls="sidenav" aria-label="Open navigation">
+  <span></span><span></span><span></span>
+</button>
+
+<script>
+(function () {
+  'use strict';
+
+  var sidenav  = document.getElementById('sidenav');
+  var toggle   = document.getElementById('sidenav-toggle');
+  var overlay  = document.getElementById('sidenav-overlay');
+  var navLinks = document.querySelectorAll('.nav-link');
+  var sections = document.querySelectorAll('section[id]');
+
+  function openNav() {
+    if (!sidenav || !overlay || !toggle) return;
+    sidenav.classList.add('is-open');
+    overlay.classList.add('is-visible');
+    toggle.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeNav() {
+    if (!sidenav || !overlay || !toggle) return;
+    sidenav.classList.remove('is-open');
+    overlay.classList.remove('is-visible');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (toggle) toggle.addEventListener('click', function () {
+    var side = document.getElementById('sidenav');
+    if (!side) return;
+    side.classList.contains('is-open') ? closeNav() : openNav();
+  });
+  if (overlay) overlay.addEventListener('click', closeNav);
+
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var href = link.getAttribute('href');
+      if (!href) return;
+      var id = href.replace('#', '');
+      var target = document.getElementById(id);
+      if (!target) return;
+      if (window.innerWidth <= 1023) closeNav();
+      setTimeout(function () {
+        var t = document.getElementById(id);
+        if (!t) return;
+        var y = t.getBoundingClientRect().top + window.pageYOffset - 24;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        history.replaceState(null, '', '#' + id);
+      }, window.innerWidth <= 1023 ? 280 : 0);
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var currentId = '';
+    var ticking   = false;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) currentId = e.target.id; });
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(function () {
+          navLinks.forEach(function (link) {
+            var active = link.getAttribute('href') === '#' + currentId;
+            link.classList.toggle('active', active);
+            if (active && sidenav) link.scrollIntoView({ block: 'nearest' });
+          });
+          ticking = false;
+        });
+      }
+    }, { rootMargin: '-5% 0px -85% 0px', threshold: 0 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
